@@ -25,14 +25,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="TestData\" />
-    <Folder Include="Tests\Login\" />
-    <Folder Include="Tests\CartAdd\" />
-    <Folder Include="Tests\Register\" />
+    <Folder Include="Reports\" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /y $(ProjectDir)\*.properties $(ProjectDir)$(OutDir)\ &amp;&#xD;&#xA;xcopy /y $(ProjectDir)\TestData\*.* $(ProjectDir)$(OutDir)\TestData\*.* &amp;&#xD;&#xA;xcopy /y $(ProjectDir)\TestData\TestDataAPI\*.* $(ProjectDir)$(OutDir)\TestData\TestDataAPI\*.* &amp;&#xD;&#xA;xcopy /y &quot;$(ProjectDir)\*.json&quot; &quot;$(ProjectDir)$(OutDir)\&quot; &amp;&#xD;&#xA;xcopy /y &quot;$(ProjectDir)\*.xml&quot; &quot;$(ProjectDir)$(OutDir)\&quot;" />
+    <Exec Command="xcopy /y $(ProjectDir)\*.properties $(ProjectDir)$(OutDir)\ &amp;&#xD;&#xA;xcopy /y $(ProjectDir)\TestData\*.* $(ProjectDir)$(OutDir)\TestData\*.* &amp;&#xD;&#xA;xcopy /y &quot;$(ProjectDir)\*.xml&quot; &quot;$(ProjectDir)$(OutDir)\&quot;" />
   </Target>
 
 </Project>

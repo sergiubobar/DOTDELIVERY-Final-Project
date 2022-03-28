@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DOTDELIVERY_Final_Project.PageModels
 {
-    class BasePage
+    public class BasePage
     {
 
         public IWebDriver driver;

@@ -21,8 +21,7 @@ namespace DOTDELIVERY_Final_Project.Tests
         public ExtentTest _test;
         public string testName;
 
-        protected static string loginUrlPath = "login";
-        protected static string registrationUrlPath = "register";
+        protected static string loginRegUrlPath = "/inregistrare";
 
         [OneTimeSetUp]
         protected void ExtentStart()
@@ -38,7 +37,7 @@ namespace DOTDELIVERY_Final_Project.Tests
             _extent.AttachReporter(htmlReporter);
             _extent.AddSystemInfo("Host Name", Environment.MachineName);
             _extent.AddSystemInfo("Environment", "Test ENV");
-            _extent.AddSystemInfo("Username", "Alex G");
+            _extent.AddSystemInfo("Username", "Sergiu B");
             htmlReporter.LoadConfig(projectPath + "report-config.xml");
         }
 

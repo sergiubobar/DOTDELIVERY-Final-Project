@@ -297,6 +297,17 @@ namespace DOTDELIVERY_Final_Project.Utils
             }
             return sb.ToString();
         }
+        public static string GenerateRandomStringAlphaCount(int count)
+        {
+            const string chars = "abcdefghijklmnopqrstuvwxyz";
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < count; i++)
+            {
+                Random r = new Random();
+                sb.Append(chars[r.Next(chars.Length)]);
+            }
+            return sb.ToString();
+        }
 
     }
 }

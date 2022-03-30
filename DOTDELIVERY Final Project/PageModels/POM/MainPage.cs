@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DOTDELIVERY_Final_Project.PageModels
+namespace DOTDELIVERY_Final_Project.PageModels.POM
 {
     class MainPage : BasePage
     {
@@ -34,10 +34,9 @@ namespace DOTDELIVERY_Final_Project.PageModels
             driver.FindElement(By.Id(pageLogoSelector)).Click();
         }
 
-        // Using this method will check if we are on the Home Page by looking after the first title from the page (Promotii). 
+        // Using this method we will check if we are on the Home Page by looking after the first title from the page (Promotii). 
         public string ShowPromoTitle()
         {
-            //Console.WriteLine(driver.FindElement(By.XPath(promotionsSelector)).Text.ToUpper());
             return driver.FindElement(By.XPath(promotionsSelector)).Text.ToUpper();
         }
     }

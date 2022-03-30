@@ -45,8 +45,8 @@ namespace DOTDELIVERY_Final_Project.Tests
         [SetUp]
         public void Setup()
         {
-            // Instatiate the browser using the Browser Factory class created in Utilities
-            driver.Value = Browser.GetDriver();
+            // Instatiate the browser using the Browser class created in Utilities
+            driver.Value = Browser.GetDriver(WebBrowsers.Chrome);
             _driver = driver.Value;
 
         }

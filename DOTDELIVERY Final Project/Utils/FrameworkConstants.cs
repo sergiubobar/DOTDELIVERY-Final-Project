@@ -13,7 +13,7 @@ namespace DOTDELIVERY_Final_Project.Utils
         static string hostName = configData["hostname"];
         static string domExt = configData["domext"];  // Domain Name Extension
         public static string browserProxy = configData["proxyserver"];
-        public static bool startHeadless = GetHeadlessConfig();
+        public static bool startHeadless = Boolean.Parse(configData["headless"]);
         public static bool useProxy = Boolean.Parse(configData["useproxy"]);
         public static bool startMaximized = Boolean.Parse(configData["startmaximized"]);
         public static bool ignoreCertErr = Boolean.Parse(configData["ignorecerterr"]);
@@ -22,7 +22,7 @@ namespace DOTDELIVERY_Final_Project.Utils
 
         public static string GetUrl()
         {
-            return String.Format("{0}://{1}.{2}",protocol, hostName, domExt);
+            return String.Format("{0}://www.{1}.{2}",protocol, hostName, domExt);
         }
 
         public static string GetExtensionName(WebBrowsers browserType)

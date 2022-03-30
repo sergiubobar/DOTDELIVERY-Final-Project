@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /y $(ProjectDir)\*.properties $(ProjectDir)$(OutDir)\ &amp;&#xD;&#xA;xcopy /y $(ProjectDir)\TestData\*.* $(ProjectDir)$(OutDir)\TestData\*.* &amp;&#xD;&#xA;xcopy /y &quot;$(ProjectDir)\*.xml&quot; &quot;$(ProjectDir)$(OutDir)\&quot;" />
+    <Exec Command="xcopy /y &quot;$(ProjectDir)\*.properties $(ProjectDir)$(OutDir)\&quot; &amp;&#xD;&#xA;xcopy /y &quot;$(ProjectDir)\TestData\*.*&quot; &quot;$(ProjectDir)$(OutDir)\TestData\*.*&quot; &amp;&#xD;&#xA;xcopy /y &quot;$(ProjectDir)\*.xml&quot; &quot;$(ProjectDir)$(OutDir)\&quot;&#xD;&#xA;" />
   </Target>
 
 </Project>

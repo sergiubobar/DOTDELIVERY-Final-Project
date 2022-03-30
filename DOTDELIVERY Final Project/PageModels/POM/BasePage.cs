@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DOTDELIVERY_Final_Project.PageModels
+namespace DOTDELIVERY_Final_Project.PageModels.POM
 {
     public class BasePage
     {

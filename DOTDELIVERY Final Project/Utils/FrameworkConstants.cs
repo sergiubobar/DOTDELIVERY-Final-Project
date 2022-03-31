@@ -14,6 +14,7 @@ namespace DOTDELIVERY_Final_Project.Utils
         static string domExt = configData["domext"];  // Domain Name Extension
         public static string browserProxy = configData["proxyserver"];
         public static bool startHeadless = Boolean.Parse(configData["headless"]);
+        //public static bool startHeadless = true;
         public static bool useProxy = Boolean.Parse(configData["useproxy"]);
         public static bool startMaximized = Boolean.Parse(configData["startmaximized"]);
         public static bool ignoreCertErr = Boolean.Parse(configData["ignorecerterr"]);

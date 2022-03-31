@@ -29,12 +29,11 @@ namespace DOTDELIVERY_Final_Project.Tests.Cart
             _test = _extent.CreateTest(testName);
             _driver.Navigate().GoToUrl(url + "/tării");
             CartPage cp = new CartPage(_driver);
-            cp.padurataSelect();
+            cp.PadurataSelect();
             cp.PadurataToCart();
-    //      var paturaLabel = cp.ReadPaturataLabel();
-            //Assert.AreEqual(cp.ReadPaturataLabel(), cp.CheckCartPopUp());
+    //      var paturaLabel = cp.ReadPadurataLabel();
+            //Assert.AreEqual(cp.ReadPadurataLabel(), cp.CheckCartPopUp());
             cp.CheckCartPage();
-
 
         }
     }

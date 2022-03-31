@@ -14,6 +14,7 @@ namespace DOTDELIVERY_Final_Project.PageModels.POM
         const string padurataLabelSelector = "_productUrl_78"; //class  _productMainImage_78 
         const string addPadurataToCartSelector = "_addToCartListProduct_78"; //class
         const string addPadurataToCartSelectorr= "add2cart"; //class
+        const string addPadurataToCartSelectorrr= "/html/body/div[2]/div[2]/div[3]/div[1]/div[1]/div[3]/div[4]/a"; //xpath
         const string closePopUpSelector = "//*[@id=\" - g - addtocart - popup - default\"]/div[3]/a[1]"; //css
         const string pageLabelSelector = "catTitle"; //class
         const string checkCartLabelSelector = "//*[@id=\"shoppingcart\"]/div[1]/h2"; //xpath
@@ -35,7 +36,7 @@ namespace DOTDELIVERY_Final_Project.PageModels.POM
             driver.FindElement(By.ClassName(addPadurataToCartSelector)).Click();
         }
 
-        public string ReadPaturataLabel()
+        public string ReadPadurataLabel()
         {
             return driver.FindElement(By.ClassName(padurataLabelSelector)).Text;
         }
@@ -54,7 +55,7 @@ namespace DOTDELIVERY_Final_Project.PageModels.POM
             Utils.Utils.WaitForFluentElement(driver, 2, By.ClassName(cartIconSelector)).Click();
             
         }
-        public void padurataSelect()
+        public void PadurataSelect()
         {
             driver.FindElement(By.ClassName(padurataImageSelector)).Click();
         }
@@ -66,9 +67,16 @@ namespace DOTDELIVERY_Final_Project.PageModels.POM
             addToCartButtonElement.Click();
         }
 
+        public void AddToCartPadurata()
+        {
+            driver.FindElement(By.XPath(addPadurataToCartSelectorrr)).Click();
+        }
+
         public void checkLabel()
         {
             Utils.Utils.WaitForFluentElement(driver, 3, By.XPath(checkCartLabelSelector)).Click();
         }
+
+
     }
 }

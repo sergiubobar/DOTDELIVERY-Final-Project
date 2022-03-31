@@ -38,7 +38,7 @@ namespace DOTDELIVERY_Final_Project.PageModels.POM
 
         public string CheckAccBtnMsg()
         {
-           return Utils.Utils.WaitForFluentElement(driver, 2, By.XPath(accountButtonSelector)).Text.ToUpper();
+           return Utils.Utils.WaitForFluentElement(driver, 3, By.XPath(accountButtonSelector)).Text;
         }
 
 

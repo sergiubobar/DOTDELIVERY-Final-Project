@@ -43,8 +43,35 @@ namespace DOTDELIVERY_Final_Project.Tests.Product
             _driver.Navigate().GoToUrl(url);
             ProductPage pp = new ProductPage(_driver);
             pp.CheckBorcanUrbanLabel();
-            pp.SelectProduct();
-            Assert.IsTrue(pp.TitleChecker2("Pate de linte"));
+            pp.SelectLinteProduct();
+            Assert.IsTrue(pp.LinteLabelChecker("Pate de linte"));
         }
+
+        [Category("SearchBar")]
+        [Test]
+        public void SearchBarProductTest()
+        {
+            testName = TestContext.CurrentContext.Test.Name;
+            _test = _extent.CreateTest(testName);
+            _driver.Navigate().GoToUrl(url);
+            ProductPage pp = new ProductPage(_driver);
+            pp.SearchProduct("linte");
+            Assert.AreEqual("Pate de linte", pp.LinteLabelChecker());
+            pp.SearchProduct("cheesecake");
+            Assert.AreEqual("Cheesecake cu banane", pp.CheesecakeLabelChecker());
+        }
+
+        [Category("SearchBar")]
+        [Test]
+        public void SearchForInvalidProduct()
+        {
+            testName = TestContext.CurrentContext.Test.Name;
+            _test = _extent.CreateTest(testName);
+            _driver.Navigate().GoToUrl(url);
+            ProductPage pp = new ProductPage(_driver);
+            pp.SearchProduct(Utils.Utils.GenerateRandomStringAlphaCount(10));
+            Assert.IsTrue(pp.InvalidProductChecker("Ne pare rau, nu am gasit produse care sa se potriveasca cu cautarea ta"));
+        }
+
     }
 }

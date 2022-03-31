@@ -50,7 +50,6 @@ namespace DOTDELIVERY_Final_Project.PageModels.POM
         public void RegisterUser(string email, string lastName, string firstName, string pass, string confirmPass, bool newsletter, bool gdpr)
         {
             var emailInput = Utils.Utils.WaitForFluentElement(driver, 1, By.Id(emailInputSelector));
-        //    var emailInput = driver.FindElement(By.Id(emailInputSelector));
             emailInput.Clear();
             emailInput.SendKeys(email);
             var lastNameInput = driver.FindElement(By.Id(lastNamedInputSelector));
@@ -78,6 +77,7 @@ namespace DOTDELIVERY_Final_Project.PageModels.POM
             var submitButton = driver.FindElement(By.Id(registerationButtonSelector));
             submitButton.Click();
         }
+
         public string CheckMainError()
         {
             return driver.FindElement(By.XPath(mainErrorSelector)).Text;

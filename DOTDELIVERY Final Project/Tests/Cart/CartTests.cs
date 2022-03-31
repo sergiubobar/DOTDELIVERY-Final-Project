@@ -10,7 +10,7 @@ namespace DOTDELIVERY_Final_Project.Tests.Cart
     class CartTests : BaseTest
     {
         string url = FrameworkConstants.GetUrl();
-
+        [Category("Cart")]
         [Test]
         public void CartButtonTest()
         {
@@ -22,6 +22,7 @@ namespace DOTDELIVERY_Final_Project.Tests.Cart
             Assert.AreEqual("https://www.dotdelivery.ro/cos-de-cumparaturi", cp.GetSiteURL());
         }
 
+        [Category("Cart")]
         [Test]
         public void AddTarieToChart()
         {

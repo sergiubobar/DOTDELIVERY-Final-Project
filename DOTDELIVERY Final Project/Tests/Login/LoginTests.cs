@@ -17,7 +17,7 @@ namespace DOTDELIVERY_Final_Project.Tests.Login
   
 
         [Category("Successfull Login")]
-        [Test, Order(2), TestCaseSource("GetCredentialsDataCsv")]
+        [Test, Order(1), TestCaseSource("GetCredentialsDataCsv")]
         public void LoginPositiveTest(string email, string password)
         {
             testName = TestContext.CurrentContext.Test.Name;
@@ -35,7 +35,7 @@ namespace DOTDELIVERY_Final_Project.Tests.Login
         }
 
         [Category("Logout")]
-        [Test, Order(3), TestCaseSource("GetCredentialsDataCsv")]
+        [Test, Order(2), TestCaseSource("GetCredentialsDataCsv")]
         public void Logout(string email, string password)
         {
             testName = TestContext.CurrentContext.Test.Name;
@@ -68,8 +68,8 @@ namespace DOTDELIVERY_Final_Project.Tests.Login
             lp.ForgotPassword();
             lp.RecoverPasword("sergiu@sergiu.ro");
         }
-
-        [Test, TestCaseSource("GetCredentialsDataCsv2")]
+        [Category("Login Errors")]
+        [Test, Order(4), TestCaseSource("GetCredentialsDataCsv2")]
         public void LoginErrorTest (string email, string password, string errorMsg)
         {
             testName = TestContext.CurrentContext.Test.Name;

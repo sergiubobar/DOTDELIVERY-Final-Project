@@ -14,6 +14,7 @@ namespace DOTDELIVERY_Final_Project.Tests.HomePage
 
         [Category("HomePage")]
         [Test, Order(1)]
+        //[Parallelizable(ParallelScope.Self)]
         public void HomePageChecker()
         {
             testName = TestContext.CurrentContext.Test.Name;
@@ -25,6 +26,7 @@ namespace DOTDELIVERY_Final_Project.Tests.HomePage
 
         [Category("HomePage")]
         [Test(Description ="Checks if the user will land on the Home Page by clicking on the Logo"), Order(2)]
+        //[Parallelizable(ParallelScope.Self)]
         public void LogoFunctionalityChecker()
         {
             testName = TestContext.CurrentContext.Test.Name;
@@ -49,8 +51,8 @@ namespace DOTDELIVERY_Final_Project.Tests.HomePage
                 Console.WriteLine("Cookie name {0} and value {1}", ck.Name, ck.Value);
             }
         }
-
-        [Test]
+        [Category("HomePage")]
+        [Test, Order(4)]
         public void CheckSiteInfo()
         {
             testName = TestContext.CurrentContext.Test.Name;

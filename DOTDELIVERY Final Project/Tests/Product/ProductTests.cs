@@ -11,7 +11,7 @@ namespace DOTDELIVERY_Final_Project.Tests.Product
     {
         string url = FrameworkConstants.GetUrl();
 
-
+        [Category("Menu")]
         [Test]
         public void LabelCheck()
         {
@@ -34,7 +34,7 @@ namespace DOTDELIVERY_Final_Project.Tests.Product
             pp.CheckFAQ();
             Assert.IsTrue(pp.TitleChecker2("FAQ"));
         }
-
+        [Category("Product")]
         [Test]
         public void ProductDescriptionTest()
         {

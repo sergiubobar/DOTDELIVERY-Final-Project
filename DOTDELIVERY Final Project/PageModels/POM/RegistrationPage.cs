@@ -49,7 +49,7 @@ namespace DOTDELIVERY_Final_Project.PageModels.POM
 
         public void RegisterUser(string email, string lastName, string firstName, string pass, string confirmPass, bool newsletter, bool gdpr)
         {
-            var emailInput = Utils.Utils.WaitForFluentElement(driver, 1, By.Id(emailInputSelector));
+            var emailInput = Utils.Utils.WaitForFluentElement(driver, 2, By.Id(emailInputSelector));
             emailInput.Clear();
             emailInput.SendKeys(email);
             var lastNameInput = driver.FindElement(By.Id(lastNamedInputSelector));
@@ -80,31 +80,37 @@ namespace DOTDELIVERY_Final_Project.PageModels.POM
 
         public string CheckMainError()
         {
-            return driver.FindElement(By.XPath(mainErrorSelector)).Text;
+            return Utils.Utils.WaitForFluentElement(driver, 1, By.XPath(mainErrorSelector)).Text;
         }
         public string CheckEmailError()
         {
-            return driver.FindElement(By.XPath(emailErrorSelector)).Text;
+            return Utils.Utils.WaitForFluentElement(driver, 1, By.XPath(emailErrorSelector)).Text;
+            //return driver.FindElement(By.XPath(emailErrorSelector)).Text;
         }
         public string CheckLastNameError()
         {
-            return driver.FindElement(By.XPath(lastNameErrorSelector)).Text;
+            return Utils.Utils.WaitForFluentElement(driver, 1, By.XPath(lastNameErrorSelector)).Text;
+          //  return driver.FindElement(By.XPath(lastNameErrorSelector)).Text;
         }
         public string CheckFirstNameError()
         {
-            return driver.FindElement(By.XPath(firstNameErrorSelector)).Text;
+            return Utils.Utils.WaitForFluentElement(driver, 1, By.XPath(firstNameErrorSelector)).Text;
+           // return driver.FindElement(By.XPath(firstNameErrorSelector)).Text;
         }
         public string CheckPasswordError()
         {
-            return driver.FindElement(By.XPath(passwordErrorSelector)).Text;
+            return Utils.Utils.WaitForFluentElement(driver, 1, By.XPath(passwordErrorSelector)).Text;
+          //  return driver.FindElement(By.XPath(passwordErrorSelector)).Text;
         }
         public string CheckRepeatPassError()
         {
-            return driver.FindElement(By.XPath(repeatPassErrorSelector)).Text;
+            return Utils.Utils.WaitForFluentElement(driver, 1, By.XPath(repeatPassErrorSelector)).Text;
+          //  return driver.FindElement(By.XPath(repeatPassErrorSelector)).Text;
         }
         public string CheckGdprError()
         {
-            return driver.FindElement(By.ClassName(gdprErrorSelector)).Text;
+            return Utils.Utils.WaitForFluentElement(driver, 1, By.ClassName(gdprErrorSelector)).Text;
+         //   return driver.FindElement(By.ClassName(gdprErrorSelector)).Text;
         }
     }
 }

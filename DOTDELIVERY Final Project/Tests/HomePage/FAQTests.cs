@@ -11,6 +11,7 @@ namespace DOTDELIVERY_Final_Project.Tests.HomePage
     {
         string url = FrameworkConstants.GetUrl();
 
+
         [Test]
         public void FAQLabelCheck()
         {

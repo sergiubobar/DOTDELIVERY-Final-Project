@@ -79,7 +79,7 @@ namespace DOTDELIVERY_Final_Project.Utils
             return MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenShot, name).Build();
         }
 
-        public static void ExecuteJsScript(IWebDriver driver, string script)
+        public static string ExecuteJsScript(IWebDriver driver, string script)
         {
             var jsExecutor = (IJavaScriptExecutor)driver;
             var result = jsExecutor.ExecuteScript(script);
@@ -87,6 +87,8 @@ namespace DOTDELIVERY_Final_Project.Utils
             {
                 Console.WriteLine(result.ToString());
             }
+            var resultedString = result.ToString();
+            return resultedString;
         }
 
         /// <summary>

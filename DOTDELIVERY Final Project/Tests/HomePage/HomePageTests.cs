@@ -49,5 +49,16 @@ namespace DOTDELIVERY_Final_Project.Tests.HomePage
                 Console.WriteLine("Cookie name {0} and value {1}", ck.Name, ck.Value);
             }
         }
+
+        [Test]
+        public void CheckSiteInfo()
+        {
+            testName = TestContext.CurrentContext.Test.Name;
+            _test = _extent.CreateTest(testName);
+            _driver.Navigate().GoToUrl(url);
+            MainPage mainp = new MainPage(_driver);
+            Assert.AreEqual("DOT Cluj | Preparate la borcan, livrare la domiciliu.", mainp.GetSiteTitle());
+            Assert.AreEqual("https://www.dotdelivery.ro/", mainp.GetSiteURL());
+        }
     }
 }

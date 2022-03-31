@@ -19,13 +19,13 @@ namespace DOTDELIVERY_Final_Project.PageModels.POM
         const string logoutButtonSelector = "//*[@id=\"wrapper\"]/div[3]/div/div[1]/div[2]/ul[5]/li/a"; //xpath
         const string forgotPassSelector = "client-pass-recov"; //class
         const string forgotPassLabelSelector = "head-pp"; //class
-        const string emailInputSelector = "#passwordRecovery > div.login-holder > div:nth-child(2) > div > input"; //css
+        const string emailInputSelector = "//*[@id=\"passwordRecovery\"]/div[1]/div[1]/div/input"; //css
         const string emailErrorMsgSelector = "hint-order"; //class
         const string submitButtonSelector = "_doRecover"; //id
+        const string popupCloseButtonSelector = "//*[@id=\"fancybox-container-1\"]/div[2]/div[4]/div/div/button"; //class
 
-        public LoginPage(IWebDriver driver) : base(driver)
-        {
-        }
+        public LoginPage(IWebDriver driver) : base(driver) { }
+
         public Boolean CheckLoginLabel(string label)
         {
             return String.Equals(label.ToUpper(), driver.FindElement(By.XPath(loginLabelSelector)).Text.ToUpper());
@@ -38,9 +38,7 @@ namespace DOTDELIVERY_Final_Project.PageModels.POM
 
         public string CheckAccBtnMsg()
         {
-            var accBtnText = Utils.Utils.WaitForFluentElement(driver, 1, By.XPath(accountButtonSelector)).Text.ToUpper();
-           return accBtnText;
-           // return driver.FindElement(By.XPath(accountButtonSelector)).Text.ToUpper();
+           return Utils.Utils.WaitForFluentElement(driver, 2, By.XPath(accountButtonSelector)).Text.ToUpper();
         }
 
 
@@ -54,6 +52,11 @@ namespace DOTDELIVERY_Final_Project.PageModels.POM
             passwordInput.SendKeys(password);
             var loginButton = driver.FindElement(By.Id(loginButtonSelector));
             loginButton.Click();
+        }
+
+        public void ClosePage()
+        {
+            driver.FindElement(By.XPath(popupCloseButtonSelector)).Click();
         }
 
         public string ErrorChecker()
@@ -75,15 +78,16 @@ namespace DOTDELIVERY_Final_Project.PageModels.POM
         {
             return driver.FindElement(By.ClassName(loginErrorMessageSelector)).Text;
         }
-
-        public void RecoverPasword(string email) /////////////////////////////////// de verificat
+        // This method uses an iframe to recover the password by sending a mail with an recovery link to the provided email
+        public void RecoverPasword(string email)
         {
-            var emailInput = driver.FindElement(By.CssSelector(emailInputSelector));
-            emailInput.Click();
+            driver.SwitchTo().Frame(1);
+            var emailInput = driver.FindElement(By.XPath(emailInputSelector));
             emailInput.Clear();
             emailInput.SendKeys(email);
             var submitButton = driver.FindElement(By.Id(submitButtonSelector));
             submitButton.Click();
+            driver.SwitchTo().DefaultContent();
         }
 
 

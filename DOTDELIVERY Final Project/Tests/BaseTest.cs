@@ -22,6 +22,8 @@ namespace DOTDELIVERY_Final_Project.Tests
         public string testName;
 
         protected static string loginRegUrlPath = "/inregistrare";
+        protected static string faqRegUrlPath = "/faq";
+        protected static string cartRegUrlPath = "/cos-de-cumparaturi";
 
         [OneTimeSetUp]
         protected void ExtentStart()

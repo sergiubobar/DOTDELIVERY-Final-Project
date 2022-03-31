@@ -50,7 +50,7 @@ namespace DOTDELIVERY_Final_Project.Tests.Login
             lp.Logout();
             Assert.AreEqual(lp.CheckAccBtnMsg(), "INTRA IN CONT");
         }
-        /*
+        
         [Category("Password Recovery")]
         [Test, Order(3)]
         public void RecoverPassword()
@@ -65,9 +65,7 @@ namespace DOTDELIVERY_Final_Project.Tests.Login
             LoginPage lp = new LoginPage(_driver);
             lp.ForgotPassword();
             lp.RecoverPasword("sergiu@sergiu.ro");
-        }*/
-        //public void LoginErrorMessagesTest() { }
-
+        }
 
         [Test, TestCaseSource("GetCredentialsDataCsv2")]
         public void LoginErrorTest (string email, string password, string errorMsg)

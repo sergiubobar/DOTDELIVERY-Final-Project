@@ -30,9 +30,7 @@ namespace DOTDELIVERY_Final_Project.PageModels.POM
         const string repeatPassErrorSelector = "//*[@id=\"_submitRegistration\"]/div/div/div[5]/span"; //xpath
         const string gdprErrorSelector = "errorMsg"; //class
 
-        public RegistrationPage(IWebDriver driver) : base(driver)
-        {
-        }
+        public RegistrationPage(IWebDriver driver) : base(driver) { }
         //This method checks if the user is on the registration page or not by checking the label of the page.
         public Boolean CheckRegistrationLabel(string label)
         {
@@ -51,7 +49,8 @@ namespace DOTDELIVERY_Final_Project.PageModels.POM
 
         public void RegisterUser(string email, string lastName, string firstName, string pass, string confirmPass, bool newsletter, bool gdpr)
         {
-            var emailInput = driver.FindElement(By.Id(emailInputSelector));
+            var emailInput = Utils.Utils.WaitForFluentElement(driver, 1, By.Id(emailInputSelector));
+        //    var emailInput = driver.FindElement(By.Id(emailInputSelector));
             emailInput.Clear();
             emailInput.SendKeys(email);
             var lastNameInput = driver.FindElement(By.Id(lastNamedInputSelector));

@@ -1,2 +1,11 @@
-﻿email,password
-sergiu@sergiu.ro,s
+﻿email,lastName,firstName,pass,confirmPass,newsletter,gdpr,emailErr,lastNameErr,firstNameErr,passErr,confirmPassErr,gdprErr
+,ss,ss,s,s,true,true,Adresa de email este obligatorie.,,,,,
+s@x.s,ss,ss,s,s,true,true,Adresa de email este obligatorie.,,,,,
+s@x.ss,s,ss,s,s,true,true,,Numele este obligatoriu.,,,,
+s@x.ss,test1,ss,s,s,true,true,,Numele este obligatoriu.,,,,
+s@x.ss,ss,s,s,s,true,true,,,Prenumele este obligatoriu.,,,
+s@x.ss,ss,test1,s,s,true,true,,,Prenumele este obligatoriu.,,,
+s@x.ss,ss,ss,,s,true,true,,,,Parola este obligatorie.,,
+s@x.ss,ss,ss,s,,true,true,,,,,Parolele nu corespund.,
+s@x.ss,ss,ss,a,s,true,true,,,,,Parolele nu corespund.,
+s@x.ss,ss,ss,s,s,true,false,,,,,,Va rugam sa completati toate campurile obligatorii.
